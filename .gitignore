@@ -1,0 +1,5 @@
+conf.d/default.conf
+certs/*
+!certs/.gitkeep
+log/*
+!log/.gitkeep
