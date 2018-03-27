@@ -10,6 +10,6 @@ RUN yum clean all && \
 WORKDIR /etc/nginx
 ENV NGINX_SSL_DOMAIN=example.com
 VOLUME ["/etc/nginx/certs", "/etc/nginx/conf.d", "/var/log/nginx"]
-CMD /usr/bin/envsubst < /etc/nginx/conf.d/default.conf.template > /etc/nginx/conf.d/default.conf && /usr/sbin/nginx -g 'daemon off;'
+CMD /usr/bin/envsubst '${NGINX_SSL_DOMAIN}' < /etc/nginx/conf.d/default.conf.template > /etc/nginx/conf.d/default.conf && /usr/sbin/nginx -g 'daemon off;'
 EXPOSE 80
 EXPOSE 443
