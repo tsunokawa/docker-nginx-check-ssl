@@ -16,7 +16,7 @@ SSL証明書と鍵ファイルを`certs/`ディレクトリに以下のファイ
 `NGINX_SSL_DOMAIN=`にドメイン名を渡してコンテナを起動します。
 
 ```
-docker run -d \
+docker run -it --rm \
 -p 80:80 \
 -p 443:443 \
 -v `PWD`/conf.d:/etc/nginx/conf.d \

@@ -12,8 +12,8 @@ server {
     ssl_certificate      /etc/nginx/certs/${NGINX_SSL_DOMAIN}.crt;
     ssl_certificate_key  /etc/nginx/certs/${NGINX_SSL_DOMAIN}.key;
 
-    access_log  /var/log/nginx/${NGINX_SSL_DOMAIN}.access.log  main;
-    error_log  /var/log/nginx/${NGINX_SSL_DOMAIN}.error.log warn;
+    access_log /dev/stdout;
+    error_log  /dev/stderr debug;
 
     location / {
         root   /usr/share/nginx/html;
